@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Timer Page</title>
+</head>
+<body>
+    <div style="float: left;">
+        <h1>Timer:</h1>
+        <p id="timer">00:00:00</p>
+    </div>
+
+    <script>
+        // Function to update the timer
+        function updateTimer() {
+            const timerElement = document.getElementById("timer");
+            let hours = 0, minutes = 0, seconds = 0;
+
+            setInterval(function() {
+                seconds++;
+
+                if (seconds === 60) {
+                    seconds = 0;
+                    minutes++;
+                }
+
+                if (minutes === 60) {
+                    minutes = 0;
+                    hours++;
+                }
+
+                const formattedTime = 
+                    `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+
+                timerElement.textContent = formattedTime;
+            }, 1000); // Update every 1 second
+        }
+
+        // Call the updateTimer function to start the timer
+        updateTimer();
+    </script>
+</body>
+</html>

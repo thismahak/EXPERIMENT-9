@@ -1,0 +1,45 @@
+<!DOCTYPE html>: This is the document type declaration and defines the document type and version of HTML being used (HTML5 in this case).
+
+<html>: The opening <html> tag signifies the start of an HTML document.
+
+<head>: The opening <head> tag contains metadata and links to external resources for the HTML document, such as the title of the web page.
+
+<title>Timer Page</title>: This line sets the title of the web page, which will appear in the browser's title bar or tab.
+
+</head>: The closing </head> tag marks the end of the document's header section.
+
+<body>: The opening <body> tag marks the start of the main content of the web page.
+
+<div style="float: left;">: This line starts a <div> element with an inline style attribute that uses CSS to float the <div> to the left side of the page.
+
+<h1>Timer:</h1>: This line creates an <h1> (header 1) element with the text "Timer:".
+
+<p id="timer">00:00:00</p>: Here, a <p> (paragraph) element is created with the id "timer" and an initial text value of "00:00:00". This is where the timer's value will be displayed.
+
+</div>: The closing </div> tag marks the end of the <div> element that contains the timer.
+
+<script>: This opening <script> tag is used to include JavaScript code within the HTML document.
+
+function updateTimer() {: This line starts the definition of a JavaScript function called updateTimer.
+
+const timerElement = document.getElementById("timer");: This line selects the HTML element with the id "timer" and stores it in the timerElement variable. This is where we will update the timer's display.
+
+let hours = 0, minutes = 0, seconds = 0;: Here, variables hours, minutes, and seconds are initialized to 0 to represent the initial time on the timer.
+
+setInterval(function() {: This line starts a JavaScript interval using setInterval. The provided function will be executed repeatedly at the specified interval (in this case, every 1000 milliseconds, or 1 second).
+
+seconds++;: Inside the interval function, the seconds variable is incremented by 1.if (seconds === 60) { ... }: This condition checks if the seconds have reached 60 and resets them to 0 while incrementing minutes if necessary.
+
+if (minutes === 60) { ... }: Similar to the previous line, this condition checks if minutes have reached 60 and resets them to 0 while incrementing hours if necessary.
+
+const formattedTime = ...;: This line creates a formatted time string in the "hh:mm:ss" format.
+
+timerElement.textContent = formattedTime;: The textContent property is used to update the text inside the HTML element with the id "timer" to display the formatted time.}, 1000);: This is the closing of the setInterval function. It specifies that the contained code should execute every 1000 milliseconds (1 second).}: The closing curly brace ends the interval function.
+
+updateTimer();: This line calls the updateTimer function to start the timer when the page loads.
+
+</script>: The closing </script> tag marks the end of the JavaScript code.
+
+</body>: The closing </body> tag marks the end of the document's body content.
+
+</html>: The closing </html> tag marks the end of the HTML document.
